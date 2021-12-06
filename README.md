@@ -13,6 +13,7 @@ You can run the Train.py to train the network (python Train.py). 2 new folders s
 RunModel.py will load in a saved model. You will need to change "loadModel" variable to the correct number that corresponds to the current network weights. This will then run the model on test images and generate a set of metrics as well as output the images.
 
 ## Images
+Order: Rasterisation, GAN, Raytraced
 ![Classroom Image](https://github.com/Jaredrhd/Global-Illumination-using-Pix2Pix-GAN/blob/main/OutputImagesExample/Classroom.png)
 
 ![Random Image](https://github.com/Jaredrhd/Global-Illumination-using-Pix2Pix-GAN/blob/main/OutputImagesExample/Random.png)
