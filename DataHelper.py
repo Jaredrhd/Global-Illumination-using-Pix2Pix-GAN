@@ -22,17 +22,24 @@ class SplitData():
         self.rayTracedImages = []
         self.shadowImages = []
 
-        filesCount = os.listdir(imageDirectory)
-        filesCount = len(filesCount)
+        if (os.path.isdir(imageDirectory)):
+            filesCount = os.listdir(imageDirectory)
+            filesCount = len(filesCount)
 
-        for i in range(filesCount//7):
-            indexString = str(i).zfill(4)
-            self.depthImages.append(os.path.join(imageDirectory, indexString + "_DepthNorm" + imageExtension))
-            self.directIlluminationImages.append(os.path.join(imageDirectory, indexString + "_DI" + imageExtension))
-            self.diffuseImages.append(os.path.join(imageDirectory, indexString + "_Diffuse" + imageExtension))
-            self.normalImages.append(os.path.join(imageDirectory, indexString + "_Normal" + imageExtension))
-            self.rayTracedImages.append(os.path.join(imageDirectory, indexString + "_RI" + imageExtension))
-            self.shadowImages.append(os.path.join(imageDirectory, indexString + "_Shadow" + imageExtension))
+            for i in range(filesCount//7):
+                indexString = str(i).zfill(4)
+                self.depthImages.append(os.path.join(imageDirectory, indexString + "_DepthNorm" + imageExtension))
+                self.directIlluminationImages.append(os.path.join(imageDirectory, indexString + "_DI" + imageExtension))
+                self.diffuseImages.append(os.path.join(imageDirectory, indexString + "_Diffuse" + imageExtension))
+                self.normalImages.append(os.path.join(imageDirectory, indexString + "_Normal" + imageExtension))
+                self.rayTracedImages.append(os.path.join(imageDirectory, indexString + "_RI" + imageExtension))
+                self.shadowImages.append(os.path.join(imageDirectory, indexString + "_Shadow" + imageExtension))
+            
+        if(not os.path.isdir("saved_models")):
+            os.makedirs("saved_models")
+        if(not os.path.isdir("GenOutput")):
+            os.makedirs("GenOutput")
+
 
     def PerformSplit(self):
         #Merge Lists to split

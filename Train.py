@@ -44,7 +44,9 @@ else:
 optimizer_G = torch.optim.Adam(generator.parameters(), lr=0.0002, betas=(0.5, 0.999))
 optimizer_D = torch.optim.Adam(discriminator.parameters(), lr=0.0002, betas=(0.5, 0.999))
 
-#sd = SplitData("ImagesBlender", "TrainingData", "ValidationData", "TestingData")
+sd = SplitData("ImagesBlender", "TrainingData", "ValidationData", "TestingData")
+
+#Uncomment the below to split the data
 #sd.PerformSplit()
 
 transform = [
